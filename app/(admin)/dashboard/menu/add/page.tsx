@@ -103,6 +103,7 @@ export default function AddMenuPage() {
             <option value="snack">Snack</option>
             <option value="drink">Minuman</option>
             <option value="dessert">Dessert</option>
+            <option value="sayur">Sayur</option>
           </select>
         </div>
 

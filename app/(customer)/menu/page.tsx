@@ -17,7 +17,7 @@ export default async function MenuPage() {
   const boxNasiMenus = menus.filter((m) => m.category === "box_nasi")
 
   return (
-    <div className="w-full">
+    <div className="w-full"> 
       <div className="max-w-6xl mx-auto px-4 py-6">
         <h1 className="text-3xl font-medium mb-1">Menu Kami</h1>
         <p className="text-sm text-gray-500 mb-6">Masakan khas Sunda dan Jawa yang autentik</p>

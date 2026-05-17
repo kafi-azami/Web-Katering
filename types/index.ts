@@ -19,4 +19,7 @@ export interface Order {
   total_price: string
   date: string
   status: string
+  delivery_date: string
+  delivery_time: string
+  quantity: string
 }

@@ -14,6 +14,9 @@ export default function OrderPage() {
   const [name, setName] = useState("")
   const [phone, setPhone] = useState("")
   const [location, setLocation] = useState("")
+  const [quantity, setQuantity] = useState("1")
+  const [date, setDate] = useState("")
+  const [time, setTime] = useState("")
   const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e: FormEvent) => {
@@ -30,7 +33,10 @@ export default function OrderPage() {
           location,
           menu_id,
           menu_name,
-          total_price: price,
+          total_price: (Number(price) * Number(quantity)).toString(),
+          delivery_date: date,
+          delivery_time: time,
+          quantity,
         }),
       })
 
@@ -60,7 +66,7 @@ export default function OrderPage() {
         <p className="text-sm text-gray-500">Menu yang dipesan</p>
         <p className="font-bold text-lg">{menu_name}</p>
         <p className="text-primary font-semibold">
-          Rp {Number(price).toLocaleString("id-ID")}
+          Rp {(Number(price) * Number(quantity)).toLocaleString("id-ID")}
         </p>
       </div>
 
@@ -98,6 +104,40 @@ export default function OrderPage() {
             placeholder="Masukkan alamat lengkap"
             required
             rows={3}
+            className="w-full border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-primary"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium mb-1">Tanggal Pengiriman</label>
+          <input
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            required
+            className="w-full border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-primary"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium mb-1">Waktu Pengiriman</label>
+          <input
+            type="time"
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+            required
+            className="w-full border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-primary"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium mb-1">Jumlah pesanan</label>
+          <input
+            type="number"
+            value={quantity}
+            onChange={(e) => setQuantity(e.target.value)}
+            min="1"
+            required
             className="w-full border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
