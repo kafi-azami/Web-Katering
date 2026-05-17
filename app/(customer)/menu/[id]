@@ -1,0 +1,23 @@
+export const HERO_SLIDES = [
+  {
+    id: 1,
+    title: "Cita Rasa Sunda & Jawa",
+    subtitle: "Masakan tradisional autentik dengan bumbu rempah pilihan.",
+    image: "/images/hero-sunda.jpg", // Pastikan file ada di folder public
+    bgColor: "#085041",
+  },
+  {
+    id: 2,
+    title: "Bahan Segar Setiap Hari",
+    subtitle: "Kami hanya menggunakan sayur dan daging pilihan terbaik.",
+    image: "/images/hero-fresh.jpg",
+    bgColor: "#04342C",
+  },
+  {
+    id: 3,
+    title: "Promo Katering Kantor",
+    subtitle: "Dapatkan harga spesial untuk langganan mingguan.",
+    image: "/images/hero-promo.jpg",
+    bgColor: "#064439",
+  },
+];
