@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { useRouter, useParams } from "next/navigation"
 import { Menu } from "@/types"
+import {toast} from "sonner"
 
 export default function DeleteMenuPage() {
   const router = useRouter()
@@ -34,14 +35,14 @@ export default function DeleteMenuPage() {
       const result = await response.json()
 
       if (result.success) {
-        alert("Menu berhasil dihapus!")
+        toast.success("Menu berhasil dihapus!")
         router.push("/dashboard/menu")
       } else {
-        alert("Gagal menghapus menu!")
+        toast.error("Gagal menghapus menu!")
       }
     } catch (error) {
       console.log(error)
-      alert("Terjadi kesalahan!")
+      toast.error("Terjadi kesalahan!")
     } finally {
       setLoading(false)
     }

@@ -18,7 +18,7 @@ export default function SearchBar() {
     }
     
     // Melakukan update URL tanpa reload halaman
-    replace(`/?${params.toString()}`);
+    replace(`?${params.toString()}`);
   }, 300);
 
   return (

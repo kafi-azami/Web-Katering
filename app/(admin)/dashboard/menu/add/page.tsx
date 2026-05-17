@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react"
 import { useRouter } from "next/navigation"
+import {toast} from "sonner"
 
 export default function AddMenuPage() {
   const router = useRouter()
@@ -37,14 +38,14 @@ export default function AddMenuPage() {
       const result = await response.json()
 
       if (result.success) {
-        alert("Menu berhasil ditambahkan!")
+        toast.success("Menu berhasil ditambahkan!")
         router.push("/dashboard/menu")
       } else {
-        alert("Gagal menambahkan menu!")
+        toast.error("Gagal menambahkan menu!")
       }
     } catch (error) {
       console.log(error)
-      alert("Terjadi kesalahan!")
+      toast.error("Terjadi kesalahan!")
     } finally {
       setLoading(false)
     }
@@ -103,6 +104,7 @@ export default function AddMenuPage() {
             <option value="snack">Snack</option>
             <option value="drink">Minuman</option>
             <option value="dessert">Dessert</option>
+            <option value="sayur">Sayur</option>
           </select>
         </div>
 
