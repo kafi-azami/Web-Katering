@@ -4,7 +4,7 @@ Web Katering adalah aplikasi berbasis web yang dirancang untuk mempermudah manaj
 
 ---
 
-## Fitur Aplikasi (Prototipe Awal)
+## Fitur Web (Prototipe Awal)
 
 Sebagai sebuah prototipe, fokus utama dari proyek ini adalah menguji alur kerja (workflow) dasar dari dua sisi pengguna tanpa melibatkan sistem autentikasi yang kompleks.
 
